@@ -22,7 +22,7 @@
 		12E7D5182A8B2D2E00A77193 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E7D5172A8B2D2E00A77193 /* OnboardingView.swift */; };
 		12E7D51A2A8B2D6700A77193 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E7D5192A8B2D6700A77193 /* OnboardingViewModel.swift */; };
 		12E7D51C2A8B2D6E00A77193 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E7D51B2A8B2D6E00A77193 /* HomeViewModel.swift */; };
-		12E7D51E2A8B2D7900A77193 /* ToodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E7D51D2A8B2D7900A77193 /* ToodoListView.swift */; };
+		12E7D51E2A8B2D7900A77193 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E7D51D2A8B2D7900A77193 /* TodoListView.swift */; };
 		12E7D5202A8B2D8100A77193 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E7D51F2A8B2D8100A77193 /* TodoListViewModel.swift */; };
 		12E7D5222A8B2D8700A77193 /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E7D5212A8B2D8700A77193 /* MemoListView.swift */; };
 		12E7D5242A8B2D8E00A77193 /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E7D5232A8B2D8E00A77193 /* MemoListViewModel.swift */; };
@@ -63,7 +63,7 @@
 		12E7D5172A8B2D2E00A77193 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		12E7D5192A8B2D6700A77193 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		12E7D51B2A8B2D6E00A77193 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		12E7D51D2A8B2D7900A77193 /* ToodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToodoListView.swift; sourceTree = "<group>"; };
+		12E7D51D2A8B2D7900A77193 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		12E7D51F2A8B2D8100A77193 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		12E7D5212A8B2D8700A77193 /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
 		12E7D5232A8B2D8E00A77193 /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				12E7D53A2A8B488B00A77193 /* Todo */,
-				12E7D51D2A8B2D7900A77193 /* ToodoListView.swift */,
+				12E7D51D2A8B2D7900A77193 /* TodoListView.swift */,
 				12E7D51F2A8B2D8100A77193 /* TodoListViewModel.swift */,
 			);
 			path = TodoList;
@@ -430,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12E7D5362A8B3E6500A77193 /* Path.swift in Sources */,
-				12E7D51E2A8B2D7900A77193 /* ToodoListView.swift in Sources */,
+				12E7D51E2A8B2D7900A77193 /* TodoListView.swift in Sources */,
 				12E7D5332A8B329000A77193 /* PathType.swift in Sources */,
 				12E7D5182A8B2D2E00A77193 /* OnboardingView.swift in Sources */,
 				12E7D53C2A8B489300A77193 /* TodoView.swift in Sources */,
