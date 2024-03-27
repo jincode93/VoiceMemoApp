@@ -11,36 +11,36 @@ struct TodoListView: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-        ZStack {
-            VStack {
-                if !todoListViewModel.todos.isEmpty {
-                    CustomNavigationBar(
-                        isDisplayLeftBtn: false,
-                        rightBtnAction: {
-                            todoListViewModel.navigationRightBtnTapped()
-                        },
-                        rightBtnType: todoListViewModel.navigationBarRightBtnMode
-                    )
-                } else {
-                    Spacer()
-                        .frame(height: 30)
-                }
-                
-                TitleView()
-                    .padding(.top, 20)
-                
-                if todoListViewModel.todos.isEmpty {
-                    AnnouncementView()
-                } else {
-                    TodoListContentView()
+        WriteBtnView(
+            content: {
+                VStack {
+                    if !todoListViewModel.todos.isEmpty {
+                        CustomNavigationBar(
+                            isDisplayLeftBtn: false,
+                            rightBtnAction: {
+                                todoListViewModel.navigationRightBtnTapped()
+                            },
+                            rightBtnType: todoListViewModel.navigationBarRightBtnMode
+                        )
+                    } else {
+                        Spacer()
+                            .frame(height: 30)
+                    }
+                    
+                    TitleView()
                         .padding(.top, 20)
+                    
+                    if todoListViewModel.todos.isEmpty {
+                        AnnouncementView()
+                    } else {
+                        TodoListContentView()
+                            .padding(.top, 20)
+                    }
                 }
-            }
-            
-            WriteTodoBtnView()
-                .padding(.trailing, 20)
-                .padding(.bottom, 50)
-        }
+            },
+            action: {
+                pathModel.paths.append(.todoView)
+            })
         .alert(
             "To do list \(todoListViewModel.removeTodosCount)개 삭제하시겠습니까?",
             isPresented: $todoListViewModel.isDisplayRemoveTodoAlert
@@ -183,30 +183,6 @@ private struct TodoCellView: View {
             Rectangle()
                 .fill(Color.customGray0)
                 .frame(height: 1)
-        }
-    }
-}
-
-// MARK: - Todo 작성 버튼 뷰
-private struct WriteTodoBtnView: View {
-    @EnvironmentObject private var pathModel: PathModel
-    
-    fileprivate var body: some View {
-        VStack {
-            Spacer()
-            
-            HStack {
-                Spacer()
-                
-                Button(
-                    action: {
-                        pathModel.paths.append(.todoView)
-                    },
-                    label: {
-                        Image("writeBtn")
-                    }
-                )
-            }
         }
     }
 }
