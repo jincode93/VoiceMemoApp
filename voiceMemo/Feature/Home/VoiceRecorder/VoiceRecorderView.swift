@@ -7,6 +7,7 @@ import SwiftUI
 
 struct VoiceRecorderView: View {
     @StateObject private var voiceRecorderViewModel = VoiceRecorderViewModel()
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
         ZStack {
@@ -43,6 +44,12 @@ struct VoiceRecorderView: View {
         ) {
             Button("확인", role: .cancel) { }
         }
+        .onChange(
+            of: voiceRecorderViewModel.recordedFiles,
+            perform: { recordedFiles in
+                homeViewModel.setVoiceRecordersCount(recordedFiles.count)
+            }
+        )
     }
 }
 
@@ -317,5 +324,6 @@ private struct RecordBtnView: View {
 struct VoiceRecorderView_Previews: PreviewProvider {
     static var previews: some View {
         VoiceRecorderView()
+            .environmentObject(HomeViewModel())
     }
 }

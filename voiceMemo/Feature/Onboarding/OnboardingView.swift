@@ -12,10 +12,8 @@ struct OnboardingView: View {
     @StateObject private var memoListViewModel = MemoListViewModel()
     
     var body: some View {
-        // TODO: - 화면 전환 구현 필요
         NavigationStack(path: $pathModel.paths) {
-//            OnboardingContentView(onboardingViewModel: onboardingViewModel)
-            TimerView()
+            OnboardingContentView(onboardingViewModel: onboardingViewModel)
                 .navigationDestination(
                     for: PathType.self,
                     destination: { pathType in
@@ -23,6 +21,8 @@ struct OnboardingView: View {
                         case .homeView:
                             HomeView()
                                 .navigationBarBackButtonHidden()
+                                .environmentObject(todoListViewModel)
+                                .environmentObject(memoListViewModel)
                             
                         case .todoView:
                             TodoView()
@@ -36,8 +36,8 @@ struct OnboardingView: View {
                                 : .init(memo: memo ?? .init(title: "", content: "", date: .now)),
                                 isCreateMode: isCreateMode
                             )
-                                .navigationBarBackButtonHidden()
-                                .environmentObject(memoListViewModel)
+                            .navigationBarBackButtonHidden()
+                            .environmentObject(memoListViewModel)
                         }
                     }
                 )
